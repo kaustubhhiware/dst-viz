@@ -3,13 +3,58 @@
   <title>Visualise dst trends</title>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link rel='shortcut icon' type='image/x-png' href='https://kaustubhhiware.github.io/img/favicon.ico' />
+  <style type="text/css">
+	   
+	   #left { position: absolute; left: 0; top: 0; width: 50%; }
+	   #right { position: absolute; right: 0; top: 0; width: 50%; }
+	   ul {list-style-type:none}
+	
+	</style>
 </head>
 <body>
+	<h1 align='center'>Disturbance Storm Index</h1>
+
+	<h3 align="center">Developed by <a href="https://github.com/kaustubhhiware">@kaustubhhiware</a></h3>
+
+	<h1 align="center" style="color: white">.</h1>
+	<div id="left">
+		
+		<p align="center">
+			The page contains the following plots:
+			<ul align='center'>
+				<li><a href='#myDiv'>All 61 years 1957-2017</a></li>
+				<li><a href='#myDiv1'>1957-1968</a></li>
+				<li><a href='#myDiv2'>1969-1980</a></li>
+				<li><a href='#myDiv3'>1981-1992</a></li>
+				<li><a href='#myDiv4'>1993-2004</a></li>
+				<li><a href='#myDiv5'>2005-2017</a></li>
+			</ul>
+		</p>
+
+	</div>
+	<div id="right">
+		
+		<p align="center">
+			Features
+			<ul align='center'>
+				<li>Crop and zoom</li>
+				<li>Double select and choose year(s) to display</li>
+				<li>Save plots as image</li>
+			</ul>
+		</p>
+		
+	</div>
+	<div style="clear: both;"></div>
 <!-- Plotly chart will be drawn inside this DIV -->
 <div id="myDiv"></div>
+<div id="myDiv1"></div>
+<div id="myDiv2"></div>
+<div id="myDiv3"></div>
+<div id="myDiv4"></div>
+<div id="myDiv5"></div>
   <script>
-  Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
-  // Plotly.d3.csv("./data.csv", function(err, rows){
+  // Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
+  Plotly.d3.csv("https://raw.githubusercontent.com/kaustubhhiware/dst-viz/master/data.csv", function(err, rows){
 
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
@@ -22,26 +67,1208 @@ var trace1 = {
   name: '1957',
   x: unpack(rows, 'Date'),
   y: unpack(rows, '1957'),
-  line: {color: '#17BECF'}
+  line: {color: '#EBF5FB'}
 }
 
 var trace2 = {
   type: "scatter",
   mode: "lines",
+  name: '1958',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1958'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace3 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1959',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1959'),
+  line: {color: '#AED6F1'}
+}
+
+var trace4 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1960',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1960'),
+  line: {color: '#85C1E9'}
+}
+
+var trace5 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1961',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1961'),
+  line: {color: '#5DADE2'}
+}
+
+var trace6 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1962',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1962'),
+  line: {color: '#3498DB'}
+}
+
+var trace7 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1963',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1963'),
+  line: {color: '#2E86C1'}
+}
+
+var trace8 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1964',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1964'),
+  line: {color: '#2874A6'}
+}
+
+var trace9 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1965',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1965'),
+  line: {color: '#21618C'}
+}
+
+var trace10 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1966',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1966'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace11 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1967',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1967'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace12 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1968',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1968'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace13 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1969',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1969'),
+  line: {color: '#AED6F1'}
+}
+
+var trace14 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1970',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1970'),
+  line: {color: '#85C1E9'}
+}
+
+var trace15 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1971',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1971'),
+  line: {color: '#5DADE2'}
+}
+
+var trace16 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1972',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1972'),
+  line: {color: '#3498DB'}
+}
+
+var trace17 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1973',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1973'),
+  line: {color: '#2E86C1'}
+}
+
+var trace18 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1974',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1974'),
+  line: {color: '#2874A6'}
+}
+
+var trace19 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1975',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1975'),
+  line: {color: '#21618C'}
+}
+
+var trace20 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1976',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1976'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace21 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1977',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1977'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace22 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1978',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1978'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace23 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1979',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1979'),
+  line: {color: '#AED6F1'}
+}
+
+var trace24 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1980',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1980'),
+  line: {color: '#85C1E9'}
+}
+
+var trace25 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1981',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1981'),
+  line: {color: '#5DADE2'}
+}
+
+var trace26 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1982',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1982'),
+  line: {color: '#3498DB'}
+}
+
+var trace27 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1983',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1983'),
+  line: {color: '#2E86C1'}
+}
+
+var trace28 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1984',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1984'),
+  line: {color: '#2874A6'}
+}
+
+var trace29 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1985',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1985'),
+  line: {color: '#21618C'}
+}
+
+var trace30 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1986',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1986'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace31 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1987',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1987'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace32 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1988',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1988'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace33 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1989',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1989'),
+  line: {color: '#AED6F1'}
+}
+
+var trace34 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1990',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1990'),
+  line: {color: '#85C1E9'}
+}
+
+var trace35 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1991',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1991'),
+  line: {color: '#5DADE2'}
+}
+
+var trace36 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1992',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1992'),
+  line: {color: '#3498DB'}
+}
+
+var trace37 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1993',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1993'),
+  line: {color: '#2E86C1'}
+}
+
+var trace38 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1994',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1994'),
+  line: {color: '#2874A6'}
+}
+
+var trace39 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1995',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1995'),
+  line: {color: '#21618C'}
+}
+
+var trace40 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1996',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1996'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace41 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1997',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1997'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace42 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1998',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1998'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace43 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1999',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1999'),
+  line: {color: '#AED6F1'}
+}
+
+var trace44 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2000',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2000'),
+  line: {color: '#85C1E9'}
+}
+
+var trace45 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2001',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2001'),
+  line: {color: '#5DADE2'}
+}
+
+var trace46 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2002',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2002'),
+  line: {color: '#3498DB'}
+}
+
+var trace47 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2003',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2003'),
+  line: {color: '#2E86C1'}
+}
+
+var trace48 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2004',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2004'),
+  line: {color: '#2874A6'}
+}
+
+var trace49 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2005',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2005'),
+  line: {color: '#21618C'}
+}
+
+var trace50 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2006',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2006'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace51 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2007',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2007'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace52 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2008',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2008'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace53 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2009',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2009'),
+  line: {color: '#AED6F1'}
+}
+
+var trace54 = {
+  type: "scatter",
+  mode: "lines",
   name: '2010',
   x: unpack(rows, 'Date'),
   y: unpack(rows, '2010'),
-  line: {color: '#7F7F7F'}
+  line: {color: '#85C1E9'}
 }
 
-var data = [trace1,trace2];
+var trace55 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2011',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2011'),
+  line: {color: '#5DADE2'}
+}
+
+var trace56 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2012',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2012'),
+  line: {color: '#3498DB'}
+}
+
+var trace57 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2013',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2013'),
+  line: {color: '#2E86C1'}
+}
+
+var trace58 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2014',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2014'),
+  line: {color: '#2874A6'}
+}
+
+var trace59 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2015',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2015'),
+  line: {color: '#21618C'}
+}
+
+var trace60 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2016',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2016'),
+  line: {color: '#1B4F72'}
+}
+
+var trace61 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2017',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2017'),
+  line: {color: '#EBF5FB'}
+}
+
+var data = [trace1,trace2,trace3,trace4,trace5,trace6,trace7,trace8,trace9,trace10,
+			trace11,trace12,trace13,trace14,trace15,trace16,trace17,trace18,trace19,trace20,
+			trace21,trace22,trace23,trace24,trace25,trace26,trace27,trace28,trace29,trace30,
+			trace31,trace32,trace33,trace34,trace35,trace36,trace37,trace38,trace39,trace40,
+			trace41,trace42,trace43,trace44,trace45,trace46,trace47,trace48,trace49,trace50,
+			trace51,trace52,trace53,trace54,trace55,trace56,trace57,trace58,trace59,trace60,
+			trace61];
     
 var layout = {
-  title: 'Basic Time Series', 
+  title: 'Disturbance storm time index', 
 };
 
 Plotly.newPlot('myDiv', data, layout);
 })
+</script>
+
+
+    <script>
+  // Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
+  Plotly.d3.csv("https://raw.githubusercontent.com/kaustubhhiware/dst-viz/master/data.csv", function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+
+  
+var trace1 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1957',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1957'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace2 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1958',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1958'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace3 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1959',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1959'),
+  line: {color: '#AED6F1'}
+}
+
+var trace4 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1960',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1960'),
+  line: {color: '#85C1E9'}
+}
+
+var trace5 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1961',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1961'),
+  line: {color: '#5DADE2'}
+}
+
+var trace6 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1962',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1962'),
+  line: {color: '#3498DB'}
+}
+
+var trace7 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1963',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1963'),
+  line: {color: '#2E86C1'}
+}
+
+var trace8 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1964',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1964'),
+  line: {color: '#2874A6'}
+}
+
+var trace9 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1965',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1965'),
+  line: {color: '#21618C'}
+}
+
+var trace10 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1966',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1966'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace11 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1967',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1967'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace12 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1968',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1968'),
+  line: {color: '#D6EAF8'}
+}
+
+var data = [trace1,trace2,trace3,trace4,trace5,trace6,trace7,trace8,trace9,trace10,
+			trace11,trace12];
+    
+var layout = {
+  title: 'Disturbance storm time index (1957-1968)', 
+};
+
+Plotly.newPlot('myDiv1', data, layout);
+})
   </script>
+    <script>
+  // Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
+  Plotly.d3.csv("https://raw.githubusercontent.com/kaustubhhiware/dst-viz/master/data.csv", function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+
+var trace13 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1969',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1969'),
+  line: {color: '#AED6F1'}
+}
+
+var trace14 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1970',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1970'),
+  line: {color: '#85C1E9'}
+}
+
+var trace15 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1971',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1971'),
+  line: {color: '#5DADE2'}
+}
+
+var trace16 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1972',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1972'),
+  line: {color: '#3498DB'}
+}
+
+var trace17 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1973',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1973'),
+  line: {color: '#2E86C1'}
+}
+
+var trace18 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1974',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1974'),
+  line: {color: '#2874A6'}
+}
+
+var trace19 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1975',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1975'),
+  line: {color: '#21618C'}
+}
+
+var trace20 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1976',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1976'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace21 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1977',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1977'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace22 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1978',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1978'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace23 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1979',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1979'),
+  line: {color: '#AED6F1'}
+}
+
+var trace24 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1980',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1980'),
+  line: {color: '#85C1E9'}
+}
+
+var data = [trace13,trace14,trace15,trace16,trace17,trace18,trace19,trace20,
+			trace21,trace22,trace23,trace24];
+    
+var layout = {
+  title: 'Disturbance storm time index(1969-1980)', 
+};
+
+Plotly.newPlot('myDiv2', data, layout);
+})
+  </script>
+    <script>
+  // Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
+  Plotly.d3.csv("https://raw.githubusercontent.com/kaustubhhiware/dst-viz/master/data.csv", function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+
+var trace25 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1981',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1981'),
+  line: {color: '#5DADE2'}
+}
+
+var trace26 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1982',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1982'),
+  line: {color: '#3498DB'}
+}
+
+var trace27 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1983',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1983'),
+  line: {color: '#2E86C1'}
+}
+
+var trace28 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1984',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1984'),
+  line: {color: '#2874A6'}
+}
+
+var trace29 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1985',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1985'),
+  line: {color: '#21618C'}
+}
+
+var trace30 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1986',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1986'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace31 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1987',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1987'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace32 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1988',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1988'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace33 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1989',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1989'),
+  line: {color: '#AED6F1'}
+}
+
+var trace34 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1990',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1990'),
+  line: {color: '#85C1E9'}
+}
+
+var trace35 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1991',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1991'),
+  line: {color: '#5DADE2'}
+}
+
+var trace36 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1992',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1992'),
+  line: {color: '#3498DB'}
+}
+
+var data = [trace25,trace26,trace27,trace28,trace29,trace30,
+			trace31,trace32,trace33,trace34,trace35,trace36];
+    
+var layout = {
+  title: 'Disturbance storm time index (1981-1992)', 
+};
+
+Plotly.newPlot('myDiv3', data, layout);
+})
+</script>
+
+   <script>
+  // Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
+  Plotly.d3.csv("https://raw.githubusercontent.com/kaustubhhiware/dst-viz/master/data.csv", function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+
+var trace37 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1993',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1993'),
+  line: {color: '#2E86C1'}
+}
+
+var trace38 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1994',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1994'),
+  line: {color: '#2874A6'}
+}
+
+var trace39 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1995',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1995'),
+  line: {color: '#21618C'}
+}
+
+var trace40 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1996',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1996'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace41 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1997',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1997'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace42 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1998',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1998'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace43 = {
+  type: "scatter",
+  mode: "lines",
+  name: '1999',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '1999'),
+  line: {color: '#AED6F1'}
+}
+
+var trace44 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2000',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2000'),
+  line: {color: '#85C1E9'}
+}
+
+var trace45 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2001',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2001'),
+  line: {color: '#5DADE2'}
+}
+
+var trace46 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2002',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2002'),
+  line: {color: '#3498DB'}
+}
+
+var trace47 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2003',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2003'),
+  line: {color: '#2E86C1'}
+}
+
+var trace48 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2004',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2004'),
+  line: {color: '#2874A6'}
+}
+
+var data = [trace37,trace38,trace39,trace40,
+			trace41,trace42,trace43,trace44,trace45,trace46,trace47,trace48];
+    
+var layout = {
+  title: 'Disturbance storm time index (1993-2004)', 
+};
+
+Plotly.newPlot('myDiv4', data, layout);
+})
+</script>
+
+  <script>
+  // Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
+  Plotly.d3.csv("https://raw.githubusercontent.com/kaustubhhiware/dst-viz/master/data.csv", function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+
+var trace49 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2005',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2005'),
+  line: {color: '#21618C'}
+}
+
+var trace50 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2006',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2006'),
+  line: {color: '#1B4F72'}
+}
+  
+var trace51 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2007',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2007'),
+  line: {color: '#EBF5FB'}
+}
+
+var trace52 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2008',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2008'),
+  line: {color: '#D6EAF8'}
+}
+
+var trace53 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2009',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2009'),
+  line: {color: '#AED6F1'}
+}
+
+var trace54 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2010',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2010'),
+  line: {color: '#85C1E9'}
+}
+
+var trace55 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2011',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2011'),
+  line: {color: '#5DADE2'}
+}
+
+var trace56 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2012',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2012'),
+  line: {color: '#3498DB'}
+}
+
+var trace57 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2013',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2013'),
+  line: {color: '#2E86C1'}
+}
+
+var trace58 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2014',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2014'),
+  line: {color: '#2874A6'}
+}
+
+var trace59 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2015',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2015'),
+  line: {color: '#21618C'}
+}
+
+var trace60 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2016',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2016'),
+  line: {color: '#1B4F72'}
+}
+
+var trace61 = {
+  type: "scatter",
+  mode: "lines",
+  name: '2017',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, '2017'),
+  line: {color: '#EBF5FB'}
+}
+
+var data = [trace49,trace50,
+			trace51,trace52,trace53,trace54,trace55,trace56,trace57,trace58,trace59,trace60,
+			trace61];
+    
+var layout = {
+  title: 'Disturbance storm time index (2005-2017)', 
+};
+
+Plotly.newPlot('myDiv5', data, layout);
+})
+</script>
 </body>
 </html>
