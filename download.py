@@ -108,34 +108,34 @@ def json2csv_():
 
 def json2csv():
 	
-with open('data.json') as f:
-	data = json.load(f)
+	with open('data.json') as f:
+		data = json.load(f)
 
 
-l = []
-for m in range(1, NUM_MONTHS+1):
-	month = "{0:0=2d}".format(m)
-	print m
-	for d in range(0, days[m-1]):
-		day = "{0:0=2d}".format(d+1)
-		date = '2018-' + month + '-' + day
-		t = [date]
-		#
-		for y in range(1957, 2018):
-			s = sum(data[str(y)][str(m)][d][h] for h in range(0, NUM_HOURS) )
-			s /= 24
-			t.append( s )
-		l.append(t)
+	l = []
+	for m in range(1, NUM_MONTHS+1):
+		month = "{0:0=2d}".format(m)
+		print m
+		for d in range(0, days[m-1]):
+			day = "{0:0=2d}".format(d+1)
+			date = '2018-' + month + '-' + day
+			t = [date]
+			#
+			for y in range(1957, 2018):
+				s = sum(data[str(y)][str(m)][d][h] for h in range(0, NUM_HOURS) )
+				s /= 24
+				t.append( s )
+			l.append(t)
 
-# Date,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017
-with open('data.csv', 'wb') as f:
-	wr = csv.writer(f, quoting=csv.QUOTE_ALL)
-	# a = 'Date'
-	# for i in range(1957,2018):
-	# 	a += ',' + str(i)
-	# wr.writerow(a)
-	wr.writerows(l)
+	# Date,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017
+	with open('data.csv', 'wb') as f:
+		wr = csv.writer(f, quoting=csv.QUOTE_ALL)
+		# a = 'Date'
+		# for i in range(1957,2018):
+		# 	a += ',' + str(i)
+		# wr.writerow(a)
+		wr.writerows(l)
 
 if __name__ == '__main__':
-	# download()
-	json2csv()
+	download()
+	# json2csv()
